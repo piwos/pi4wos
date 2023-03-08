@@ -1,0 +1,348 @@
+/* Gerais */
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.row {
+  margin: 0;
+}
+
+.container {
+  padding: 40px 0;
+}
+
+p, li {
+  color: #444;
+  font-size: 14px;
+}
+
+/* Barra de navegação */
+
+header, .navbar {
+  background-color: #6A5ACD;
+}
+
+#nav-container {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#logo {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.navbar-brand {
+  padding: 0;
+  color: #FFF;
+}
+
+.navbar-brand:hover {
+  color: #FFF;
+}
+
+#navbar-links a {
+  color: #FFF;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding: 1rem .8rem;
+}
+
+.nav-item.active {
+  border-bottom: 3px solid #FFF;
+}
+
+#menu-dropdown {
+  background-color: #6A5ACD;
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #1C2331;
+  color: grey !important;
+}
+
+/* Slider */
+
+.container-fluid {
+  padding: 0;
+  margin-top: 70px;
+}
+
+#mainSlider .carousel-inner, #mainSlider .carousel-item {
+  height: 90vh;
+}
+
+#mainSlider .carousel-caption {
+  top: 30%;
+}
+
+#mainSlider .carousel-caption h2 {
+  font-size: 50px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+#mainSlider .carousel-caption .font-banner1 {
+    color: #6A5ACD;
+}
+
+#mainSlider .carousel-caption .font-banner2 {
+    color: #FF8C00;
+}
+
+#mainSlider .carousel-caption p {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 100px;
+  color: #000000;
+}
+  
+.carousel-indicators .active {
+  background-color: #65DAF9;
+}
+
+.carousel-inner > .carousel-item > img {
+  height: 100%; 
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 30px;
+    width: 30px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+
+/* Sobre o projeto */
+
+.main-title {
+  color: #444;
+  margin: 0 0 40px 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+.main-title::after {
+  content: "";  
+  width: 15%;
+  position: absolute;
+  top: 60px;
+  left: 42.5%;
+}
+
+.about-title {
+  font-size: 17px;
+  color: #444;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#about-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#about-list li {
+  line-height: 30px;
+}
+
+#about-list i {
+  color: #65DAF9;
+  margin-right: 15px;
+}
+
+
+/* Integrantes */
+
+#team-photos {
+  margin-top: 20px;
+}
+.card-body {
+  text-align: center;
+}
+
+.card-img-top {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 90px;
+}
+
+
+/* Repositorio */
+
+#repository-area-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80px;
+  height: 90px;
+}
+
+/* Footer */
+
+#contact-area {
+  padding-top: 30px;
+  text-align: center;
+}
+
+.contact-box {
+  padding-bottom: 40px;
+}
+
+.contact-box i {
+  color: #444;
+  border: solid 1px #444;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  font-size: 16px;
+}
+
+.contact-tile {
+  font-weight: bold;
+  color: #6A5ACD;
+}
+
+
+/* Copy */
+
+#copy-area {
+  background-color: #000000;
+}
+
+#copy-area .container {
+  padding: 10px 0;
+  text-align: center;
+}
+
+#copy-area .container p {
+  margin-bottom: 0;
+}
+
+/* Página Graficos */
+
+.title-pesquisa {
+  color: #444;
+  margin: 50px 0 20px 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+#tabela-pesquisa {
+  margin: 10px 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* responsive */
+@media(max-width: 768px) {
+  
+  /* geral */
+  .container {
+    padding: 20px 0;
+  }
+  
+  /* slider */
+  #mainSlider .carousel-inner, #mainSlider .carousel-item {
+    height: auto;
+  }
+
+  #mainSlider .carousel-caption h2 {
+    font-size: 28px;
+  }
+
+  #mainSlider .carousel-caption p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  .carousel-caption {
+    left: 10%;
+    right: 10%;
+  }
+  
+  /* Sobre */
+  #about-area img {
+    margin-top: 100px;
+  }
+  
+  
+  /* Integrantes */
+  .card-title {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+}
+
+
+@media(max-width: 425px) {
+
+  /* slider */
+  #mainSlider {
+    margin-top: 90px;
+  }
+
+  #mainSlider .carousel-caption {
+    top: 5%;
+  }
+
+  #mainSlider .carousel-caption h2 {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+
+  #mainSlider .carousel-caption p {
+    display: none;
+  }
+
+  .carousel-caption .main-btn {
+    
+    font-size: 14px;
+  }
+
+  /* Sobre */
+  .main-title {
+    font-size: 30px;
+  }
+
+  #about-area img {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+
+  /* Integrantes */
+  #team-area .col-md-3 {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Paginação */
+.pagination {
+  margin-bottom: 20px;
+}
+
+.step-links {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.step-links .current {
+  margin-left : 5px;
+  margin-right: 5px;
+}

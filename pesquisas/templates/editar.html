@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>PI VI WoS - Pesquisas Editar</title>
+{% endblock head %}
+
+
+{% block content %}
+<main>
+  <div id="content-area">
+    <div class="container">
+        <div class="row">
+
+          <div class="col-12"> 
+            <h3 class="title-pesquisa">Pesquisas</h3>
+          </div>
+
+          <div class="col-8 m-auto pt-4 pb-2 text-center form-group">
+            <table>
+            <form method="POST">
+              {% csrf_token %}
+              {{ form.as_table }}
+            </table>
+              <input type="submit" class="btn btn-success" value="Salvar">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}

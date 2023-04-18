@@ -1,0 +1,21 @@
+/* geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #323232;
+  border: none;
+}
+
+/* links */
+
+
+#register-container p {
+  margin-bottom: 10px;
+}
+
+.gradient-body {
+  background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(233,101,231,1) 100%, rgba(0,212,255,1) 100%);
+}

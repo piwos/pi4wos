@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {'packages':['bar']});
+  google.charts.setOnLoadCallback(drawStuff);
+
+  function drawStuff() {
+    var data = new google.visualization.arrayToDataTable([
+      ['Instituição', 'Citação'],
+      {% for i in dflist %}
+        ['{{i.0}}', {{i.1}}],
+      {% endfor %}
+      ]);
+      
+
+    var options = {
+      title: 'Chess opening moves',
+      width: 900,
+      legend: { position: 'none' },
+      // chart: { title: 'Resultado das dez instituições com maiores ocorrências de publicações.'},
+      bars: 'horizontal', // Required for Material Bar Charts.
+      axes: {
+        x: {
+          0: { side: 'top', label: 'Citação'} // Top x-axis.
+        }
+      },
+      bar: { groupWidth: "90%" }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('top_x_div'));
+    chart.draw(data, options);
+  };
+</script>
+  <title>PI VI WoS - Pesquisas Gráfico</title>
+{% endblock head %}
+
+
+{% block content %}
+<main>
+    <div id="content-area">
+      <div class="container">
+          
+          <div class="row">           
+            <div class="col-12"> 
+              <h3 class="title-pesquisa">Resultado das dez instituições com maiores ocorrências de publicações.</h3>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-12" id="top_x_div" style="width: 900px; height: 400px;"></div>
+          </div>
+          
+
+        </div>
+    </div>
+
+</main>
+{% endblock content %}

@@ -1,0 +1,97 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block head %}
+    <title>Projeto Integrador PI IV</title>
+  {% endblock head %}
+  <!-- Estilos -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/pages-styles.css' %}">
+  <script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+  <script src="{% static 'js/fonte.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/76a4da8fc7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="acessibilidade">
+      <div class="container" id="nav-container">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img id="logo" src="{% static 'img/logopi.png' %}" alt="PI WoS"> PI WoS
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-links">
+          <div class="navbar-nav">
+            
+            {% if 'pesquisas/' not in request.path %}
+            <a class="nav-item nav-link" id="home-menu" href="#">Home</span></a>
+            <a class="nav-item nav-link" id="about-menu" href="#">PI IV</a>
+            <a class="nav-item nav-link" id="team-menu" href="#">Integrantes</a>
+            <a class="nav-item nav-link" id="repository-menu" href="#">Repositório</a>
+            <a class="nav-item nav-link" id="contact-menu" href="#">Contato</a>
+            {% else %}
+            <a class="nav-item nav-link" id="home-menu" href="{% url 'index' %}">Home</span></a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Pesquisas
+                </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="menu-dropdown">
+                    <a class="dropdown-item" href="{%  url 'pesquisas_home' %}">Principal</a>
+                    <a class="dropdown-item" href="{%  url 'pesquisas_cadastrar' %}">Cadastrar</a>
+                    <a class="dropdown-item" href="{%  url 'pesquisas_listar' %}">Listar</a>                    
+                    <a class="dropdown-item" href="{%  url 'pesquisas_grafico' %}">Gráfico</a>                    
+                  </div>
+                </div>
+
+                {% if 'pesquisas/listar/' in request.path %}
+                <form class="form-inline my-2 my-lg-0" action="{% url 'pesquisas_pesquisar' %}">
+                    <input class="form-control mr-sm-2" name="query" type="search" placeholder="Pesquisar Instituição" aria-label="Search">
+                    <button class="btn btn-light my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </form>                
+                {% endif %}
+
+                <div class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ user.first_name }}
+                  </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" id="menu-dropdown">
+                      <a class="dropdown-item" href="{%  url 'profile' %}">Perfil</a>
+                      <a class="dropdown-item" href="{% url 'logout' %}">Log-Out</a>
+                    </div>
+                  </div>
+
+            {% else %}
+            
+              <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Log-In</a>
+            {% endif %}
+
+            <!-- Botões de Acessibilidade -->
+            <button class="btn btn-secondary" onClick="fonte('a');">A+</button> <!-- Botão + -->
+            <button class="btn btn-secondary" onClick="fonte('n');" title="Normal">A</button> <!-- Botão - -->
+            <button class="btn btn-secondary" onClick="fonte('d');">A-</button> <!-- Botão - -->
+      
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+  </header>
+
+{% block content %}
+{% endblock content %}
+
+<script src="{% static 'js/navbar-scripts.js' %}"></script>
+</div>
+</body>
+</html>

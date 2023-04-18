@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>PI IV WoS - Pesquisas Cadastro</title>
+{% endblock head %}
+
+{% block content %}
+<main>
+  <div id="content-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 title-pesquisa">
+          <h2>Carregar arquivo CSV</h2>
+          <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <input name="myfile" id="myfile" type="file" />
+          <button type="submit" class="btn btn-success">Upload</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock content %}
